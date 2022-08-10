@@ -5,22 +5,30 @@ public class show_first_20_primes {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Enter number: ");
         int number = scanner.nextInt();
-        if(number < 2) {
-            System.out.println(number + " is not a prime");
-        } else {
-            int i = 2;
-            boolean check = true;
-            while (i < number){
-                if ( number % i == 0){
-                    check = false;
-                    break;
+        int count = 1;
+        boolean check = false;
+        if(number < 1) {
+            System.out.println(" invalid number");
+        } else if (number == 1) {
+            System.out.println('2');
+        }
+        else {
+            System.out.println("20 first prime: ");
+            System.out.println('2');
+            int i = 3;
+            while (count < number){
+                for (int j = 2; j <i; j++) {
+                    if(i%2 == 0){
+                        check = false;
+                    }
                 }
-                i++;
+               if(check){
+                   count++;
+                   System.out.println(i);
+               }
             }
-            if(check)
-                System.out.println(number + " is a prime");
-            else
-                System.out.println(number + " is not a prime");
+           i++;
+            check = true;
         }
     }
 }
